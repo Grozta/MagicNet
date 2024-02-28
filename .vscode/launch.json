@@ -1,0 +1,52 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "30%BTCV",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/code/train_main_btcv.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/code",
+            "args": [
+                "--labelnum","5",
+                "--batch_size","4",
+                "--root_path","/media/icml/H4T/DATASET/btcv_h5"
+        ],
+            "env": {"CUDA_VISIBLE_DEVICES":"0",}
+        },
+        {
+            "name": "40%BTCV",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/code/train_main_btcv.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/code",
+            "args": ["--labelnum","7",],
+            "env": {"CUDA_VISIBLE_DEVICES":"0",}
+        },
+        {
+            "name": "10%MACT",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/code/train_main_mact.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/code",
+            "args": ["--labelnum","7",],
+            "env": {"CUDA_VISIBLE_DEVICES":"0",}
+        },
+        {
+            "name": "20%MACT",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/code/train_main_mact.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/code",
+            "args": ["--labelnum","13",],
+            "env": {"CUDA_VISIBLE_DEVICES":"0",}
+        }
+    ]
+}

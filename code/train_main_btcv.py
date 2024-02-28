@@ -76,7 +76,7 @@ txt_path = "../data/btcv.txt"
 num_classes = 14
 class_momentum = 0.999
 patch_size = (96, 96, 96)
-args.root_path = args.root_path + 'data/btcv_h5'
+#args.root_path = args.root_path + 'data/btcv_h5'
 
 train_data_path = args.root_path
 max_iterations = args.max_iteration
