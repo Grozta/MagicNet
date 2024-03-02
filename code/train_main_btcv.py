@@ -315,6 +315,11 @@ def train(train_list, test_list, fold_id=1):
                                                        consistency_loss,
                                                        consistency_weight,
                                                        0.1 * loc_loss))
+                # save checkpoint 
+                # save_mode_path = os.path.join(snapshot_path_tmp, 'latest.pth')
+                # torch.save(model.state_dict(), save_mode_path)
+                # writer.add_scalar('train_loss/Total_loss', loss, iter_num)
+                # logging.info("save model to {}".format(save_mode_path))
 
             lr_ = base_lr * (1.0 - iter_num / max_iterations) ** 0.9
             for param_group in optimizer.param_groups:
@@ -362,13 +367,13 @@ def train(train_list, test_list, fold_id=1):
                                      dice_all[11],
                                      dice_all[12]))
 
-                if dice_avg > best_dice_avg:
-                    best_dice_avg = dice_avg
-                    save_mode_path = os.path.join(snapshot_path_tmp, 'iter_{}_dice_{}.pth'.format(iter_num, best_dice_avg))
-                    save_best_path = os.path.join(snapshot_path_tmp, '{}_best_model.pth'.format(args.model))
-                    torch.save(model.state_dict(), save_mode_path)
-                    torch.save(model.state_dict(), save_best_path)
-                    logging.info("save best model to {}".format(save_mode_path))
+                # if dice_avg > best_dice_avg:
+                #     best_dice_avg = dice_avg
+                #     save_mode_path = os.path.join(snapshot_path_tmp, 'iter_{}_dice_{}.pth'.format(iter_num, best_dice_avg))
+                #     save_best_path = os.path.join(snapshot_path_tmp, '{}_best_model.pth'.format(args.model))
+                #     torch.save(model.state_dict(), save_mode_path)
+                #     torch.save(model.state_dict(), save_best_path)
+                #     logging.info("save best model to {}".format(save_mode_path))
                 # writer.add_scalar('Var_dice/Dice', dice_avg, iter_num)
                 # writer.add_scalar('Var_dice/Best_dice', best_dice_avg, iter_num)
                 model.train()
